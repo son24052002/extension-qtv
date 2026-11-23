@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+      "type": "modifyHeaders",
+      "responseHeaders": [
+        { "header": "X-Frame-Options", "operation": "remove" },
+        { "header": "Content-Security-Policy", "operation": "remove" }
+      ],
+      "requestHeaders": [
+        { "header": "Referer", "operation": "set", "value": "https://www.youtube.com/" }
+      ]
+    },
+    "condition": {
+      "requestDomains": ["youtube.com", "www.youtube.com", "youtube-nocookie.com"],
+      "resourceTypes": ["sub_frame", "main_frame", "xmlhttprequest"]
+    }
+  }
+]

@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "QTV YouTube Full Unblocker",
+  "version": "2.0",
+  "description": "Nhúng trực tiếp YouTube Watch vào QTV, mở khóa 100% video bản quyền",
+  "permissions": [
+    "declarativeNetRequest"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://*.youtube-nocookie.com/*"
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "ruleset_1",
+        "enabled": true,
+        "path": "rules.json"
+      }
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/watch*"],
+      "js": ["content.js"],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}
