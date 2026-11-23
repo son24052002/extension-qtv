@@ -90,3 +90,22 @@ if (window.self !== window.top) {
     }
   });
 }
+const style = document.createElement('style');
+  style.textContent = `
+    html, body { overflow: hidden !important; background: #000 !important; }
+    ytd-masthead, #secondary, #below, #chat, ytd-merch-shelf-renderer { display: none !important; }
+    #page-manager { margin-top: 0 !important; }
+    #movie_player, .html5-video-player, video {
+      position: fixed !important;
+      top: 0 !important;
+      left: 0 !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      z-index: 999999 !important;
+    }
+    /* Ẩn nút phóng to (Fullscreen), chế độ rạp hát và trình phát thu nhỏ */
+    .ytp-fullscreen-button, .ytp-size-button, .ytp-miniplayer-button {
+      display: none !important;
+    }
+  `;
+  document.documentElement.appendChild(style);
